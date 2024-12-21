@@ -1,4 +1,4 @@
-
+'''
 student={
     "name":"A",
     "age":50,
@@ -20,3 +20,15 @@ print(student2.get("age"))
 print(student.keys())
 print(student.values())
 print(student.clear())
+
+student4=()   #this is 3rd method to create a dictionarry
+'''
+
+stu=dict(name="C",age=20,contact_no='05656549645')   #4th way to create a dictionarry
+print(stu)
+
+stu["city"]="kandy"
+print(stu)
+
+stu["age"]=68
+print(stu)
