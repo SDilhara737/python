@@ -2,7 +2,7 @@
 exit='a'
 print("Electricity bill calculator\n")
 cost=[]
-while exit!='e':
+while exit!='e'or exit!='E':
 
 
     unit=int(input("Enter the unit consumed:\n_"))
@@ -82,4 +82,4 @@ while exit!='e':
             print("next 30 Units-", cost[2], "( Rs.480 Fixed charges added)")
             print("next", (unit - 120), "Units-", cost[3], "( Rs.480 Fixed charges added)")
 
-    exit = input("\nPress any key to calculate again\nEnter 'e' to exit\n_")
+    exit = input("\nEnter any key to calculate again\nEnter 'e' to exit\n_")
