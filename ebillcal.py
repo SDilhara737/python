@@ -1,10 +1,10 @@
 
 exit='a'
 print("Electricity bill calculator\n")
-cost=[]
+
 while exit!='e':
 
-
+    cost = []
     unit=int(input("Enter the unit consumed:\n_"))
 
 
