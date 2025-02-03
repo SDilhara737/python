@@ -16,11 +16,11 @@ while response!="9":                                                          ##
 
             if quantity.isdigit():                                          #cheching user input is a number or not
                     quantity = int(quantity)
-                    unit_price = input("Enter price of a unit\n:")
+                    unit_price = input("Enter price of a unit($)\n:")
                     if unit_price.isdigit():                                #cheching user input is a number or not
                         unit_price = float(unit_price)
 
-                        product[product_Id] = {"Product name": product_name, "Quantity": quantity,"Unit price": unit_price}
+                        product[product_Id] = {"Product name": product_name, "Quantity": quantity,"Unit price($)": unit_price}
                         print("You added the product-",product[product_Id])
 
                     else:
@@ -56,14 +56,13 @@ while response!="9":                                                          ##
                 if x==search_1:
                     print(product[search_1])
                     break
+            else:
+                print("product ID you entered doesn't exist")
 
-                else:
-                    print("product ID you entered doesn't exist")
-                break
-        if resp=="2":
+        elif resp=="2":
             for key,value in product.items():
                 print(f"{key}:{value}")
-                break
+
         else:
             print("Wronge input")
 
