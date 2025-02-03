@@ -103,7 +103,7 @@ while response!="9":                                                          ##
             print(f": {value}")
 
 
-        print("This is your Total cost-$",sum(Total_cost))                  ##calculate total cost
+        print("\nThis is your Total cost-$",sum(Total_cost))                  ##calculate total cost
         print("\n  ***\nThank you\n  ****")
 
 
