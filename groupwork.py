@@ -84,7 +84,7 @@ while response!="9":                                                          ##
             order_product = int(input("enter product ID_"))                 #to get user response ehat user want to order
             order_qnt=int(input("Enter quantity you want:"))                #to get order quantity from user
             if order_qnt<=int(product[order_product]["Quantity"]):               #To check quantity that user need is avilable in the inventory
-                cart[order_product]={"Product Id":order_product,"Quantity":order_qnt,"Total sub-cost":order_qnt*product[order_product]["Unit price"]}   #this will create "order_product" key & order_qnt value in the cart dictionary
+                cart[order_product]={"Product Id":order_product,"Quantity":order_qnt,"Total sub-cost":order_qnt*product[order_product]["Unit price($)"]}   #this will create "order_product" key & order_qnt value in the cart dictionary
                 product[order_product]["Quantity"] -= order_qnt             #This will update the inventory quantity
                 order=int(input("\nOrder added to the cart, To place an another order enter 1\nTo checkout press 0\n"))
                 Total_cost.append(cart[order_product]["Total sub-cost"])    #adding each sub cost to checkout balance
