@@ -5,12 +5,14 @@ product_Id=0
 product_track=[]                                                            ##this shows the all product ID's
 response=0
 
+
 while response!="9":                                                          ##Until hit 9(exit), program runs
 
     response = input("\nPlease enter,\n1 to add new product\n2 to add quantity to existing product\n3 to search product\n4 to place an order\n9 to exit\n_")
     if response =="1":                                                        ##Add product to the inventory
-        product_Id=product_Id+1                                             ##This will create unique ID for products
-        def product_details():                                              ##function that contain product details
+
+        def product_details():
+            global product_Id##function that contain product details
             product_name=input("Enter product name\n:")
             quantity=input("How much quantity have\n:")
 
@@ -19,14 +21,18 @@ while response!="9":                                                          ##
                     unit_price = input("Enter price of a unit($)\n:")
                     if unit_price.isdigit():                                #cheching user input is a number or not
                         unit_price = float(unit_price)
+                        product_Id =product_Id + 1                          ##This will create unique ID for products
 
                         product[product_Id] = {"Product name": product_name, "Quantity": quantity,"Unit price($)": unit_price}
                         print("You added the product-",product[product_Id])
 
                     else:
+
                         print("Enter a number")
+
             else:
                 print("Enter a whole number")
+
 
         product_details()
         product_track.append(product_Id)                                    ##add product ID to the list
