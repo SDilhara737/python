@@ -15,24 +15,26 @@ while response!="9":                                                            
         def product_details():                                                                                                                                       ##function that contain product details
             global product_Id
             product_name=input("Enter product name\n:")
-            quantity=input("How much quantity have\n:")
+            if len(product_name)>0:
+                quantity=input("How much quantity have\n:")
+                if quantity.isdigit():                                                                                                                                   #cheching user input is a number or not
+                        quantity = int(quantity)
+                        unit_price = input("Enter price of a unit($)\n:")
+                        try:                                                                                                                      #cheching user input is a number or not
+                            unit_price = float(unit_price)
+                            product_Id =product_Id + 1                                                                                                                      ##This will create unique ID for products
+                            productId_list.append(product_Id)                                                                                                               #Add the product ID to the list
 
-            if quantity.isdigit():                                                                                                                                   #cheching user input is a number or not
-                    quantity = int(quantity)
-                    unit_price = input("Enter price of a unit($)\n:")
-                    try:                                                                                                                      #cheching user input is a number or not
-                        unit_price = float(unit_price)
-                        product_Id =product_Id + 1                                                                                                                      ##This will create unique ID for products
-                        productId_list.append(product_Id)                                                                                                               #Add the product ID to the list
+                            product[product_Id] = {"Product name": product_name, "Quantity": quantity,"Unit price($)": unit_price}                                          #adding new product to the inventory
+                            print("You added the product-",product[product_Id])
 
-                        product[product_Id] = {"Product name": product_name, "Quantity": quantity,"Unit price($)": unit_price}                                          #adding new product to the inventory
-                        print("You added the product-",product[product_Id])
+                        except ValueError:
+                            print("\n**product insert failed**\nInvalid Input.Enter a number\n")
 
-                    except ValueError:
-                        print("Enter a number")
-
+                else:
+                    print("\n**product insert failed**\nInvalid Input.Enter a whole number")
             else:
-                print("Enter a whole number")
+                print("\n**product insert failed**\nName cannot be empty\n")
 
 
         product_details()
@@ -51,7 +53,7 @@ while response!="9":                                                            
                     print(product[selection],"\n")
                     break
         else:
-            print("product ID that you entered is invalid\n")
+            print("\nproduct ID that you entered is invalid\n")
 
 
 
@@ -64,14 +66,14 @@ while response!="9":                                                            
                     print(product[search_1])
                     break
             else:
-                print("product ID you entered doesn't exist")
+                print("\nproduct ID you entered doesn't exist\n")
 
         elif resp=="2":
             for key,value in product.items():
                 print(f"{key}:{value}")
 
         else:
-            print("Wronge input")
+            print("\nInvalid Input\n")
 
 
     if response=="4":                                                                                                                                                #Order placing portal
@@ -114,7 +116,7 @@ while response!="9":                                                            
                         countorder = countorder - 1                                                                                                                    #Reset the order count
                         break
                 else:
-                    print("Order ID you entered is not available")
+                    print("\nOrder ID you entered is not available\n")
                     countorder = countorder - 1                                                                                                                            #Reset the order count
 
         print("\nThis is the order you placed\n")                                                                                                                       ##to show what user aded to the cart
