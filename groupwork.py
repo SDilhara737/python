@@ -129,6 +129,6 @@ while response!="9":                                                            
 
 
 else:
-        print("Bye.See you again")
+        print("**Bye**\nSee you again\nThank you for using Inventory Managment System\n(Powerd by FE-Group02-UOC)\n ")
 
         
